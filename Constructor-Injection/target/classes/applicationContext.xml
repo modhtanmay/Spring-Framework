@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="custObj" class="com.tanmay.spring.constructor.injection.Customer">
+		<constructor-arg name="custId" value="588"></constructor-arg>
+		<constructor-arg name="custName" value="Tanmay"></constructor-arg>
+		<constructor-arg name="emailId" value="abc@gmail.com"></constructor-arg>
+		<constructor-arg name="contactNo" value="9876543210"></constructor-arg> 
+	</bean>
+	<bean id="memObj" class="com.tanmay.spring.constructor.injection.Membership">
+		<constructor-arg name="membershipId" value="600"></constructor-arg>
+		<constructor-arg name="membershipType" value="hey"></constructor-arg>
+		<constructor-arg name="visitsPerYear" value="8"></constructor-arg>
+		<constructor-arg>
+			<ref bean="custObj"></ref>
+		</constructor-arg>
+	</bean>
+
+</beans>
